@@ -23,8 +23,8 @@ Getting Started with React and Typescript <br />
 * [@testing-library](https://testing-library.com)
 
 ##### Private Packages
-* [@hotmart/cosmos](https://webpack.js.org)
-* [@hotmart/request](https://webpack.js.org)
+* [@hotmart/cosmos](https://github.com/Hotmart-Org/cosmos)
+* [@hotmart/request](https://github.com/Hotmart-Org/request)
 
 ## Install Packages
 You need to create the ".npmrc" file to access the private packages.
