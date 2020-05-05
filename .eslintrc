@@ -1,0 +1,92 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "createDefaultProgram": true
+  },
+  "extends": [
+    "plugin:jest/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "eslint:recommended"
+  ],
+  "plugins": [
+    "jest",
+    "react-hooks",
+    "eslint-plugin-react",
+    "eslint-plugin-import",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    /* React Rules */
+    "react/prop-types": 0,
+    "react/jsx-uses-vars": "error",
+    "react/react-in-jsx-scope": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": 0,
+
+    /* Jest Rules */
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+
+    /* Typescript Rules */
+    "@typescript-eslint/ban-ts-ignore": 0,
+    "@typescript-eslint/no-use-before-define": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-inferrable-types": ["error"],
+    "@typescript-eslint/interface-name-prefix": ["error", { "prefixWithI": "always" }],
+
+    /* App Rules */
+    "dot-notation": "error",
+    "no-loop-func": "error",
+    "guard-for-in": "error",
+    "prefer-template": "error",
+    "no-nested-ternary": "error",
+    "no-param-reassign": "error",
+    "no-array-constructor": "error",
+    "no-useless-constructor": "error",
+    "max-params": ["error", 3],
+    "keyword-spacing": ["error"],
+    "eqeqeq": ["error", "always"],
+    "arrow-parens": ["error", "always"],
+    "init-declarations": ["error", "always"],
+    "arrow-body-style": ["error", "as-needed"],
+    "object-curly-spacing": ["error", "always"],
+    "implicit-arrow-linebreak": ["error", "beside"],
+    "new-cap": ["error", { "capIsNew": true }],
+    "no-bitwise": ["error", { "int32Hint": true }],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "no-use-before-define": ["error", { "functions": false }],
+    "max-lines": ["error", { "max": 200, "skipComments": true }],
+    "no-duplicate-imports": ["error", { "includeExports": true }],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "max-len": ["error", { "code": 120, "comments": 70, "tabWidth": 4 }],
+    "max-lines-per-function": ["error", { "max": 120, "skipComments": true }],
+    "no-console": ["error", { "allow": ["time", "timeEnd", "warn", "error"] }],
+    "operator-linebreak": ["error", "before", { "overrides": { "&&": "after" } }],
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0, "maxBOF": 0 }],
+    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "padding-line-between-statements": ["error", { "blankLine": "always", "prev": "directive", "next": "*"}],
+    "import/order": ["error", {"groups": ["builtin", "external", "internal", "parent", "sibling", "index"]}]
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest/globals": true
+  },
+  "globals": {
+    "document": false
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
