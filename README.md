@@ -13,14 +13,14 @@ Getting Started with React and Typescript <br />
 
 ##### Public Packages
 * [React](https://github.com/facebook/react)
-* [I18next](https://github.com/facebook/react)
-* [Redux](https://github.com/facebook/react)
+* [I18next](https://www.i18next.com/)
+* [Redux](https://redux.js.org/)
 * [TypeScript](https://github.com/microsoft/TypeScript)
-* [Sass](https://github.com/facebook/react)
-* [Webpack](https://webpack.js.org)
-* [Storybook](https://webpack.js.org)
-* [Jest](https://webpack.js.org)
-* [@testing-library](https://webpack.js.org)
+* [Sass](https://sass-lang.com/)
+* [Webpack](https://webpack.js.org/)
+* [Storybook](https://storybook.js.org/)
+* [Jest](https://jestjs.io/)
+* [@testing-library](https://testing-library.com/)
 
 ##### Private Packages
 * [@hotmart/cosmos](https://webpack.js.org)
