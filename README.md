@@ -60,6 +60,8 @@ npm run storybook
        ├── table.component.scss
        ├── table.constants.ts
        ├── table.interfaces.ts
+       ├── stories/
+           ├── table.stories.tsx 
        ├── hooks/
            ├── use-table.spec.ts
            ├── use-table.hook.ts
