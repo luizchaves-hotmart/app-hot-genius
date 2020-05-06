@@ -1,5 +1,4 @@
 declare module '*.svg' {
-  // eslint-disable-next-line init-declarations
   const content: any;
   export default content;
 }
@@ -9,7 +8,6 @@ declare module 'worker-loader!*' {
 }
 
 declare namespace JSX {
-  // eslint-disable-next-line @typescript-eslint/interface-name-prefix
   interface IntrinsicElements {
     'hot-alert': any;
     'hot-avatar': any;
