@@ -7,7 +7,6 @@
 /config/jest/coverage
 
 # folders
-/locale
 /dist
 
 # misc
