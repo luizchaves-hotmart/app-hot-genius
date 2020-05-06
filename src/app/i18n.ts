@@ -10,7 +10,7 @@ i18n
   .init({
     debug: false,
     fallbackLng: 'pt-BR',
-    whitelist: ['pt-BR', 'es', 'fr', 'en', 'default'],
+    whitelist: ['pt-BR', 'es', 'fr', 'en'],
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json'
     },
