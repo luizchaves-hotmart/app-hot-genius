@@ -33,8 +33,6 @@ You need to create the ".npmrc" file to access the private packages.
 npm install
 ```
 
-<hr />
-
 ## Development
 
 ```
