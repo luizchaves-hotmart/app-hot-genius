@@ -6,7 +6,6 @@ import { Provider } from 'react-redux'
 import '@cosmos/styles/reset.css';
 import '@cosmos/styles/base.css';
 import '@cosmos/styles/theme.css';
-import '@cosmos/styles/animations.css';
 
 /* Cosmos global components */
 import '@cosmos/alert/variations/warning.css';
@@ -24,8 +23,9 @@ import '@cosmos/styles/utilities/display/display.css';
 
 import { Routes } from './routes';
 import { store } from './redux/redux.store';
-import './styles.scss';
+
 import './i18n';
+import './styles.scss';
 
 ReactDOM.render(
   <Provider store={store}>
