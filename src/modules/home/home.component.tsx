@@ -10,11 +10,11 @@ function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const user: UserVO = new UserVO({ id: '1', name: 'Test' });
+    const user = new UserVO({ id: '1', name: 'Test' });
     dispatch(usersSlice.actions.saveUsers([user]));
   }, []);
 
-  console.warn(users);
+  console.warn(users, users.byId, users.allIds);
   return <div>home</div>
 }
 
