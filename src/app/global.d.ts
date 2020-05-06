@@ -8,6 +8,7 @@ declare module 'worker-loader!*' {
 }
 
 declare namespace JSX {
+  // eslint-disable-next-line @typescript-eslint/interface-name-prefix
   interface IntrinsicElements {
     'hot-alert': any;
     'hot-avatar': any;
