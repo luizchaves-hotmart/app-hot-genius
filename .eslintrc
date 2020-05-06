@@ -40,7 +40,6 @@
     "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-inferrable-types": ["error"],
-    "@typescript-eslint/interface-name-prefix": ["error", { "prefixWithI": "always" }],
 
     /* App Rules */
     "dot-notation": "error",
@@ -55,7 +54,6 @@
     "keyword-spacing": ["error"],
     "eqeqeq": ["error", "always"],
     "arrow-parens": ["error", "always"],
-    "init-declarations": ["error", "always"],
     "arrow-body-style": ["error", "as-needed"],
     "object-curly-spacing": ["error", "always"],
     "implicit-arrow-linebreak": ["error", "beside"],
