@@ -7,5 +7,6 @@ describe('Test Loader Component', () => {
     const { getByTestId } = render(<Loader />);
     const loader = getByTestId('hot-loading') as HTMLElement;
     expect(!!loader).toBeTruthy();
+    expect(!!loader.shadowRoot).toBeTruthy();
   });
 });

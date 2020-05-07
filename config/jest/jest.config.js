@@ -13,11 +13,7 @@ module.exports = {
     '!**/node_modules/**',
     '!**/dist/**'
   ],
-  setupFiles: [
-    'jest-canvas-mock',
-    '<rootDir>/node_modules/mutationobserver-shim/MutationObserver.js',
-    '<rootDir>/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js'
-  ],
+  setupFiles: ['jest-canvas-mock'],
   coveragePathIgnorePatterns: [
     '<rootDir>/dist/',
     '<rootDir>/node_modules/'
