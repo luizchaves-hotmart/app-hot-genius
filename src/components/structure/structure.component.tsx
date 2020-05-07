@@ -7,9 +7,9 @@ import { useSelector } from 'app/redux/redux.store';
 import StructureMenu from './structure-menu.component';
 
 function Structure(props) {
-  const loggedUser = useSelector((state) => state.loggedUser);
+  const auth = useSelector((state) => state.auth);
 
-  if (!loggedUser) {
+  if (!auth) {
     return props.children;
   }
 

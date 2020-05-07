@@ -11,7 +11,7 @@ interface IProps {
 }
 
 function PrivateRoute(props: IProps) {
-  const loggedUser = useSelector((state) => state.loggedUser);
+  const auth = useSelector((state) => state.auth);
   const Component = props.component;
 
   return (
@@ -19,7 +19,7 @@ function PrivateRoute(props: IProps) {
       exact={props.exact}
       path={props.path}
       render={() => {
-        return loggedUser
+        return auth
           ? <PrivateErrorBoundary>
               <Component />
             </PrivateErrorBoundary>

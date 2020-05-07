@@ -2,19 +2,19 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useSelector } from 'app/redux/redux.store';
-import { UserVO , usersSlice } from 'common/modules/user';
+import { ProductVO, productSlice } from 'common/modules/product';
 import './home.component.scss';
 
 function Home() {
-  const users = useSelector((state) => state.users);
+  const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const user = new UserVO({ id: '1', name: 'example user', locale: 'pt-BR' });
-    dispatch(usersSlice.actions.saveUsers([user]));
+    const product = new ProductVO({ id: '1', name: 'example product' });
+    dispatch(productSlice.actions.saveProducts([product]));
   }, []);
 
-  console.warn(users, users.byId, users.allIds);
+  console.warn(products, products.byId, products.allIds);
   return <div>home</div>
 }
 

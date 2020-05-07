@@ -1,8 +1,11 @@
-require('dotenv').config();
-
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+require('dotenv')
+  .config({
+    path: path.resolve(__dirname, `../../env/.${process.env.NODE_ENV}`)
+  });
 
 const common = {
   entry: './src/app/app.tsx',

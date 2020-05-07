@@ -1,10 +1,10 @@
-import { loggedUserSlice } from 'common/modules/user';
+import { authSlice } from 'common/modules/auth';
 import { oidClient } from '../auth.constants';
 
 function signOut() {
   return async (dispatch) => {
     try {
-      dispatch(loggedUserSlice.actions.setLoggedUser(null));
+      dispatch(authSlice.actions.setAuth(null));
       await oidClient.signoutRedirect();
     } catch (e) {
       console.error(e);
