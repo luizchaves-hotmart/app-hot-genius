@@ -17,6 +17,7 @@ import '@cosmos/toast';
 /* Cosmos global utilities */
 import '@cosmos/styles/utilities/sizing.css';
 import '@cosmos/styles/utilities/text/text.css';
+import '@cosmos/styles/utilities/border/border.css';
 
 import { Routes } from './routes';
 import { store } from './redux/redux.store';
