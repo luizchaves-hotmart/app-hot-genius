@@ -26,7 +26,6 @@ Getting Started with React and Typescript <br />
 * [@hotmart/cosmos](https://github.com/Hotmart-Org/cosmos)
 * [@hotmart/request](https://github.com/Hotmart-Org/request)
 
-
 ## Configuring hosts
 
 Before you start running the project, you must add the following hosts on your `/etc/hosts` file:
@@ -88,3 +87,8 @@ npm run storybook
            ├── ...
    ├── ... 
 ```
+
+## Copyright
+Hotmart &copy; 2020
+
+Made with ❤
