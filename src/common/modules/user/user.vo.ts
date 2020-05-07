@@ -1,10 +1,18 @@
-class UserVO {
-  id: string;
-  name: string;
+import { AUTHORITIES } from 'common/constants';
 
-  constructor(data: UserVO) {
+type UserVOConstructor =
+  Pick<UserVO, 'id' | 'name' | 'locale'>
+  & Partial<UserVO>;
+
+export default class UserVO {
+  readonly id: string;
+
+  name: string;
+  locale: string;
+  authorities: AUTHORITIES[];
+
+  constructor(data: UserVOConstructor) {
+    this.authorities = [];
     Object.assign(this, data);
   }
 }
-
-export default UserVO;

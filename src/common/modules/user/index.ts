@@ -1,8 +1,11 @@
-import usersSlice from './users.slice';
 import UserVO from './user.vo';
-// export * from './thunks';
+import usersSlice from './users.slice';
+import loggedUserSlice from './logged-user.slice';
 
-export * from './user.constants';
 export * from './user.interfaces';
 export * from './user.types';
-export { usersSlice, UserVO };
+export {
+  UserVO,
+  usersSlice,
+  loggedUserSlice
+};

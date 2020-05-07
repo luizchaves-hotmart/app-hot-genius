@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'app/redux/redux.store';
 
+import { useSelector } from 'app/redux/redux.store';
 import { UserVO , usersSlice } from 'common/modules/user';
 import './home.component.scss';
 
@@ -10,7 +10,7 @@ function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const user = new UserVO({ id: '1', name: 'Test' });
+    const user = new UserVO({ id: '1', name: 'example user', locale: 'pt-BR' });
     dispatch(usersSlice.actions.saveUsers([user]));
   }, []);
 
