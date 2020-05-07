@@ -26,20 +26,36 @@ Getting Started with React and Typescript <br />
 * [@hotmart/cosmos](https://github.com/Hotmart-Org/cosmos)
 * [@hotmart/request](https://github.com/Hotmart-Org/request)
 
-## Install Packages
+
+## Configuring hosts
+
+Before you start running the project, you must add the following hosts on your `/etc/hosts` file:
+```
+127.0.0.1       dev.hotmart.com
+127.0.0.1       dev.buildstaging.com
+0.0.0.0         dev.hotmart.com
+0.0.0.0         dev.buildstaging.com
+```
+
+## Running
+
+Installing components: <br />
 You need to create the ".npmrc" file to access the private packages.
 
-```
+```sh
 npm install
 ```
 
-## Development
+Starting on development mode:
 
-```
-npm run start
+```sh
+npm start
 ```
 
-#### Storybook
+* Open [http://dev.buildstaging.com:8080](http://dev.buildstaging.com:8080)
+* Have fun coding!
+
+## Storybook
 ```
 npm run storybook
 ```
@@ -72,6 +88,3 @@ npm run storybook
            ├── ...
    ├── ... 
 ```
-
-<hr />
-

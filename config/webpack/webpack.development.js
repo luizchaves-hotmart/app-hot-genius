@@ -6,7 +6,7 @@ const config = {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './public',
-    host: '0.0.0.0',
+    host: 'dev.buildstaging.com',
     port: 8080,
     compress: true,
     historyApiFallback: true,
