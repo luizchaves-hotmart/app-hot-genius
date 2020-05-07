@@ -2,15 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { UserManager } from 'oidc-client'
-const settings = {
-  'authority': process.env.AUTH_DOMAIN,
-  'client_id': process.env.AUTH_CLIENT_ID,
-  'response_type': process.env.AUTH_RESPONSE_TYPE,
-  'redirect_uri': process.env.AUTH_REDIRECT_URI + (window.location.pathname || ''),
-  'scope': process.env.AUTH_SCOPE
-}
-
 /* Cosmos global styles */
 import '@cosmos/styles/reset.css';
 import '@cosmos/styles/base.css';
