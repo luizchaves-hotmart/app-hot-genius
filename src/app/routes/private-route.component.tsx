@@ -18,12 +18,13 @@ function PrivateRoute(props: IProps) {
     <Route
       exact={props.exact}
       path={props.path}
-      render={auth
-        ? <PrivateErrorBoundary>
-            <Component/>
-          </PrivateErrorBoundary>
-        : <Redirect to="/"/>
-      } />
+      render={() => {
+        return auth
+          ? <PrivateErrorBoundary>
+              <Component />
+            </PrivateErrorBoundary>
+          : <Redirect to="/" />;
+      }} />
   );
 }
 
