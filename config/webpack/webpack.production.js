@@ -1,6 +1,9 @@
+const path = require('path');
 const { GenerateSW } = require('workbox-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const webpack = require('webpack');
+const jsonminify = require('jsonminify');
 const commonConfig = require('./webpack.common');
 
 const config = {
@@ -49,6 +52,16 @@ const config = {
       threshold: 10240,
       minRatio: 0
     }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../../public/locales/**/*.json'),
+        context: path.resolve(__dirname, '../../public/locales/'),
+        to: path.resolve(__dirname, '../../dist/locales/'),
+        transform: async function(content) {
+          return jsonminify(content.toString());
+        }
+      }
+    ]),
     new GenerateSW({
       include: [/\.js$/, /\.css$/]
     }),
