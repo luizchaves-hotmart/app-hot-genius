@@ -36,6 +36,19 @@ Before you start running the project, you must add the following hosts on your `
 0.0.0.0         dev.buildstaging.com
 ```
 
+## Configuring CAS
+
+To connect to CAS, you must fill the environment variables in the files 
+`/env/.development`, `/env/.staging` and `/env/.production`.
+
+```
+AUTH_DOMAIN=?
+AUTH_CLIENT_ID=?
+AUTH_RESPONSE_TYPE=?
+AUTH_REDIRECT_URI=?
+AUTH_SCOPE=?
+```
+
 ## Running
 
 Installing components: <br />

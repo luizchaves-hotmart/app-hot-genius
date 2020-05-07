@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
+import { useSelector } from 'app/redux/redux.store';
 
 import { PrivateErrorBoundary } from 'components/error';
 
@@ -10,19 +11,20 @@ interface IProps {
 }
 
 function PrivateRoute(props: IProps) {
+  const auth = useSelector((state) => state.auth);
   const Component = props.component;
-
-  /* Validate session user */
 
   return (
     <Route
       exact={props.exact}
       path={props.path}
-      render={() => (
-        <PrivateErrorBoundary>
-          <Component />
-        </PrivateErrorBoundary>
-      )} />
+      render={() => {
+        return auth
+          ? <PrivateErrorBoundary>
+              <Component />
+            </PrivateErrorBoundary>
+          : <Redirect to="/" />;
+      }} />
   );
 }
 
