@@ -55,7 +55,6 @@
     "keyword-spacing": ["error"],
     "eqeqeq": ["error", "always"],
     "arrow-parens": ["error", "always"],
-    "arrow-body-style": ["error", "as-needed"],
     "object-curly-spacing": ["error", "always"],
     "implicit-arrow-linebreak": ["error", "beside"],
     "new-cap": ["error", { "capIsNew": true }],
