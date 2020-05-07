@@ -1,5 +1,10 @@
 module.exports = {
   preset: 'ts-jest',
+  globals: {
+    'ts-jest': {
+      diagnostics: false
+    }
+  },
   rootDir: '../../',
   verbose: true,
   collectCoverage: true,

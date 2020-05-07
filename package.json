@@ -10,7 +10,8 @@
     "analyzer": "rm -rf dist && NODE_ENV=analyzer webpack --config config/webpack/webpack.analyzer.js",
     "lint-check": "eslint './src/**/*.{ts,tsx}'",
     "type-check": "tsc",
-    "test": "jest --config config/jest/jest.config.js",
+    "jest-cache": "jest --clearCache",
+    "test": "npm run jest-cache && jest --config config/jest/jest.config.js",
     "prepush": "npm run type-check && npm run lint-check && npm run test"
   },
   "dependencies": {
