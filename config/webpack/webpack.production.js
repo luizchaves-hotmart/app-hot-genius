@@ -1,11 +1,10 @@
-const webpack = require('webpack');
-const CompressionPlugin = require('compression-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const common = require('./webpack.common');
 const { GenerateSW } = require('workbox-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const webpack = require('webpack');
+const commonConfig = require('./webpack.common');
 
 const config = {
-  ...common,
+  ...commonConfig,
   mode: 'production',
   optimization: {
     splitChunks: {
@@ -18,14 +17,14 @@ const config = {
       automaticNameDelimiter: '~',
       name: true,
       cacheGroups: {
-        vendor_fonts: {
-          test: /[\\/]node_modules[\\/](@fortawesome)[\\/]/,
-          name: 'vendor_fonts',
+        vendor_firsts: {
+          test: /[\\/]node_modules[\\/](react|react-dom|react-redux|i18next)[\\/]/,
+          name: 'vendor_firsts',
           chunks: 'all'
         },
-        vendor_graphs: {
-          test: /[\\/]node_modules[\\/](moment|plotly)[\\/]/,
-          name: 'vendor_graphs',
+        vendor_icons: {
+          test: /[\\/]node_modules[\\/](@fortawesome)[\\/]/,
+          name: 'vendor_icons',
           chunks: 'all'
         },
         vendor_hotmart: {
@@ -42,14 +41,7 @@ const config = {
     }
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      isProd: true,
-      template: './index.html',
-      environment: 'production'
-    }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"'
-    }),
+    ...commonConfig.plugins,
     new CompressionPlugin({
       filename: '[path].gz[query]',
       algorithm: 'gzip',

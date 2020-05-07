@@ -1,11 +1,15 @@
+require('dotenv').config();
+
 const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const common = {
-  entry: './src/app/index.tsx',
+  entry: './src/app/app.tsx',
   output: {
-    filename: '[name].[hash].js',
-    path: path.resolve(__dirname, '../../dist'),
     publicPath: '/',
+    path: path.resolve(__dirname, '../../dist'),
+    filename: '[name].[hash].js',
     chunkFilename: '[chunkhash].bundle.js'
   },
   resolve: {
@@ -51,7 +55,24 @@ const common = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      isProd: process.env.NODE_ENV === 'production',
+      template: './public/index.html',
+      favicon: './public/favicon.ico'
+    }),
+    new webpack.EnvironmentPlugin([
+      'APP_URL',
+      'AUTH_SCOPE',
+      'AUTH_DOMAIN',
+      'AUTH_CLIENT_ID',
+      'AUTH_REDIRECT_URI',
+      'AUTH_REDIRECT_URI',
+      'AUTH_RESPONSE_TYPE'
+    ]),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+  ]
 };
 
 module.exports = common;
