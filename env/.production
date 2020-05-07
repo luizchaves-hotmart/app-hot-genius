@@ -3,7 +3,7 @@ AUTH_DOMAIN=?
 AUTH_CLIENT_ID=?
 AUTH_RESPONSE_TYPE=?
 AUTH_REDIRECT_URI=?
-AUTH_SCOPE="openid authorities user profile"
+AUTH_SCOPE=?
 
 # APP
 APP_URL=?
