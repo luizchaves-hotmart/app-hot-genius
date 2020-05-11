@@ -1,4 +1,3 @@
-import React, { Suspense } from 'react';
 import { configure } from '@storybook/react';
 import 'app/i18n';
 
@@ -22,14 +21,9 @@ import '@cosmos/styles/utilities/border/border.css';
 import '@cosmos/styles/utilities/spacing/spacing.css';
 import '@cosmos/styles/utilities/display/display.css';
 
-function SuspenseWrapper({ children }) {
-  return <Suspense fallback={<div>loading...</div>}>{children}</Suspense>;
-}
-
 function loadStories() {
   const req = require.context('../../src/', true, /.stories.tsx$/);
   req.keys().forEach(req)
 }
 
-configure(loadStories, module)
-  .addDecorator((story) => <SuspenseWrapper>{story()}</SuspenseWrapper>);
+configure(loadStories, module);
