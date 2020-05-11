@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "storybook": "start-storybook -p 9001 --config-dir config/storybook -s ./src",
+    "storybook": "start-storybook -p 9001 --config-dir config/storybook -s ./public",
     "start": "NODE_ENV=development webpack-dev-server --config config/webpack/webpack.development.js",
     "build-staging": "rm -rf dist && NODE_ENV=staging webpack --config config/webpack/webpack.staging.js",
     "build-prod": "rm -rf dist && NODE_ENV=production webpack --config config/webpack/webpack.production.js",
