@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 
-import { signOut } from 'store/auth';
+import { useAuth } from 'modules/auth';
 import { Loader } from 'components/loader';
 
 function LogoutPage() {
-  const dispatch = useDispatch();
+  const auth = useAuth();
 
-  useEffect(() => {
-    dispatch(signOut());
-  }, []);
+  useEffect(auth.signOut, []);
 
   return <Loader />;
 }

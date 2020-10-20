@@ -1,4 +1,4 @@
-export default class AuthVO {
+export interface IAuth {
   readonly id: string;
   readonly authenticationDate: string;
   readonly authenticationMethod: string;
@@ -7,8 +7,11 @@ export default class AuthVO {
   readonly locale: string;
   readonly login: string;
   readonly loginAttempts: string;
-
-  constructor(data: AuthVO) {
-    Object.assign(this, data);
-  }
 }
+
+export interface IUseAuth {
+  signIn(): void;
+  signOut(): void;
+}
+
+export type TAuth = IAuth | null;

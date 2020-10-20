@@ -3,15 +3,11 @@ import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-import { productSlice } from './product';
-import { statusSlice } from './status';
-import authSlice from './auth/auth.slice';
+import { authSlice } from 'modules/auth';
 import { IRootState } from './redux.interfaces';
 
 const rootReducer = {
-  auth: authSlice.reducer,
-  products: productSlice.reducer,
-  status: statusSlice.reducer
+  auth: authSlice.reducer
 };
 
 export const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
