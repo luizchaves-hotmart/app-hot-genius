@@ -3,9 +3,9 @@ import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-import { productSlice } from 'common/modules/product';
-import { statusSlice } from 'common/modules/status';
-import { authSlice } from 'common/modules/auth';
+import { productSlice } from './product';
+import { statusSlice } from './status';
+import authSlice from './auth/auth.slice';
 import { IRootState } from './redux.interfaces';
 
 const rootReducer = {

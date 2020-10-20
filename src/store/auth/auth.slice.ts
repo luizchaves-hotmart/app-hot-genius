@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AuthType } from './auth.types';
+import { TAuth } from './auth.interfaces';
 
-function setAuth(state: AuthType, action: PayloadAction<AuthType>): AuthType {
+function setAuth(state: TAuth, action: PayloadAction<TAuth>): TAuth {
   return action.payload;
 }
 
 export default createSlice({
   name: 'auth',
-  initialState: null as AuthType,
+  initialState: null as TAuth,
   reducers: { setAuth }
 });

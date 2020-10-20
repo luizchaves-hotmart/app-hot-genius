@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { useSelector } from 'app/redux/redux.store';
-import { ProductVO, productSlice } from 'common/modules/product';
+import { useSelector } from 'store/redux.store';
+import { ProductVO, productSlice } from 'store/product';
 import './home.component.scss';
 
-function Home() {
+function HomePage() {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
@@ -18,4 +18,4 @@ function Home() {
   return <div>home</div>
 }
 
-export default Home;
+export default HomePage;

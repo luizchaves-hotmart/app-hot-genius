@@ -1,18 +1,18 @@
 import React from 'react';
 
+import '@cosmos/tag';
 import '@cosmos/avatar';
-import '@cosmos/badge';
 import '@cosmos/collapse';
-import '@cosmos/dropdown';
 import '@cosmos/header';
 import '@cosmos/menu';
 import '@cosmos/menu-item';
 import '@cosmos/tooltip';
+import '@cosmos/dropdown';
 
 function StructureMenu() {
   return (
     <hot-menu slot="menu">
-      <div slot="product-name">Analytics</div>
+      <div slot="product-name">App</div>
 
       <hot-header slot="header">
         <span slot="brand-name">Pro</span>

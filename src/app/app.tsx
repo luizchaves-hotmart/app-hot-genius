@@ -19,15 +19,15 @@ import '@cosmos/styles/utilities/sizing.css';
 import '@cosmos/styles/utilities/text/text.css';
 import '@cosmos/styles/utilities/border/border.css';
 
-import { Routes } from './routes';
-import { store } from './redux/redux.store';
+import { store } from 'store/redux.store';
+import AppMain from './app-main';
 
 import './i18n';
 import './app.scss';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Routes />
+    <AppMain />
   </Provider>,
   document.getElementById('root')
 );

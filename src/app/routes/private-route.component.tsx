@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { useSelector } from 'app/redux/redux.store';
+import { useSelector } from 'store/redux.store';
 
 import { PrivateErrorBoundary } from 'components/error';
 

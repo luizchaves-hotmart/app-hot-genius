@@ -3,7 +3,7 @@ import React from 'react';
 import '@cosmos/content';
 import '@cosmos/structure';
 
-import { useSelector } from 'app/redux/redux.store';
+import { useSelector } from 'store/redux.store';
 import StructureMenu from './structure-menu.component';
 
 function Structure(props) {

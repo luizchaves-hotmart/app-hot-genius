@@ -6,8 +6,8 @@ import { Structure } from 'components/structure';
 import PublicRoute from './public-route.component';
 import PrivateRoute from './private-route.component';
 
-const LoginLoadable = lazy(() => import('modules/login/login.component'));
-const HomeLoadable = lazy(() => import('modules/home/home.component'));
+const Logout = lazy(() => import('pages/logout/logout.component'));
+const Home = lazy(() => import('pages/home/home.component'));
 
 function Routes() {
   return (
@@ -15,9 +15,8 @@ function Routes() {
       <hot-toast />
       <Suspense fallback={<Loader />}>
         <BrowserRouter>
-          <PublicRoute exact path="/" component={LoginLoadable} />
-          <PublicRoute exact path="/login" component={LoginLoadable} />
-          <PrivateRoute exact path="/home" component={HomeLoadable} />
+          <PublicRoute exact path="/logout" component={Logout} />
+          <PrivateRoute exact path="/home" component={Home} />
         </BrowserRouter>
       </Suspense>
     </Structure>
