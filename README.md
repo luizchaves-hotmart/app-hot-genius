@@ -37,10 +37,7 @@ Open webpack.development file and change host
 devServer: {
   contentBase: './public',
   host: 'local.YOUR_APP_NAME.buildstaging.com',
-  port: 8080,
-  compress: true,
-  historyApiFallback: true,
-  hot: true
+  ...
 }
 ```
 
