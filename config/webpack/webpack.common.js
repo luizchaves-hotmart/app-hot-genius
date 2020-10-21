@@ -63,8 +63,7 @@ const common = {
     new webpack.EnvironmentPlugin([
       'APP_URL',
       'AUTH_CLIENT_ID'
-    ]),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    ])
   ]
 };
 
