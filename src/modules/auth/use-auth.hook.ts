@@ -1,24 +1,25 @@
-import AuthService from '@hotmart/cas-js';
-import { IUseAuth } from './auth.interfaces';
+import { useDispatch } from 'react-redux';
 
-const auth = new AuthService({
-  env: 'development',
-  authority: 'https://sso.buildstaging.com/oidc',
-  response_type: 'id_token token',
-  client_id: process.env.AUTH_CLIENT_ID,
-  redirect_uri: 'http://dev.buildstaging.com:8080',
-  scope: 'openid authorities user profile'
-});
+import { IUseAuth } from './auth.interfaces';
+import authService from './auth.service';
+import authSlice from './auth.slice';
 
 function useAuth(): IUseAuth {
+  const dispatch = useDispatch();
+
   async function signIn() {
-    auth.signinCallback().then((user) => {
-      console.log('User info:', user);
-    }).catch(() => auth.signinRedirect());
+    try {
+      const user = await authService.signinCallback();
+      dispatch(authSlice.actions.setAuth(user));
+      console.warn('User info:', user);
+    } catch (e) {
+      authService.signinRedirect();
+    }
   }
 
   function signOut() {
-    auth.signoutRedirect();
+    authService.signoutRedirect();
+    authService.removeUser();
   }
 
   return { signIn, signOut };

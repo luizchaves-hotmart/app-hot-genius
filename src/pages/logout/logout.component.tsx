@@ -4,9 +4,11 @@ import { useAuth } from 'modules/auth';
 import { Loader } from 'components/loader';
 
 function LogoutPage() {
-  const auth = useAuth();
+  const { signOut } = useAuth();
 
-  useEffect(auth.signOut, []);
+  useEffect(() => {
+    signOut();
+  }, []);
 
   return <Loader />;
 }
