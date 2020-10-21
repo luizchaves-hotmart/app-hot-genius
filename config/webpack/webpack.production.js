@@ -30,7 +30,7 @@ const config = {
           return jsonminify(content.toString());
         }
       }, {
-        from: path.resolve(__dirname, '../../public/assets/**/*.svg'),
+        from: path.resolve(__dirname, '../../public/assets/**/*.*'),
         context: path.resolve(__dirname, '../../public/assets/'),
         to: path.resolve(__dirname, '../../dist/assets/')
       }]

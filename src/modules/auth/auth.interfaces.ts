@@ -1,17 +1,11 @@
 export interface IAuth {
-  readonly id: string;
-  readonly authenticationDate: string;
-  readonly authenticationMethod: string;
-  readonly authorities: string[];
-  readonly credentialType: string;
-  readonly locale: string;
-  readonly login: string;
-  readonly loginAttempts: string;
-}
-
-export interface IUseAuth {
-  signIn(): void;
-  signOut(): void;
+  readonly id_token: string;
+  readonly access_token: string;
+  readonly token_type: string;
+  readonly profile: {
+    name: string;
+    locale: string;
+  };
 }
 
 export type TAuth = IAuth | null;

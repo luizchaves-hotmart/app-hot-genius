@@ -1,5 +1,7 @@
+import Auth from './auth.component';
 import authSlice from './auth.slice';
-import useAuth from './use-auth.hook';
+import authService from './auth.service';
 
+export * from './auth.constants';
 export * from './auth.interfaces';
-export { authSlice, useAuth };
+export { Auth, authSlice, authService };

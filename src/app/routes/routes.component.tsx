@@ -1,12 +1,14 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { Loader } from 'components/loader';
 import { Structure } from 'components/structure';
+import { Loader } from 'components/loader';
 import PublicRoute from './public-route.component';
 import PrivateRoute from './private-route.component';
 
-const Logout = lazy(() => import('pages/logout/logout.component'));
+import('../app-cosmos');
+import('../i18n');
+
 const Home = lazy(() => import('pages/home/home.component'));
 
 function Routes() {
@@ -15,8 +17,8 @@ function Routes() {
       <hot-toast />
       <Suspense fallback={<Loader />}>
         <BrowserRouter>
-          <PublicRoute exact path="/logout" component={Logout} />
-          <PrivateRoute exact path="/home" component={Home} />
+          <PublicRoute exact path="/oi" component={() => <div>oi</div>} />
+          <PrivateRoute exact path="/" component={Home} />
         </BrowserRouter>
       </Suspense>
     </Structure>

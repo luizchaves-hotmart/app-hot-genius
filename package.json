@@ -6,7 +6,7 @@
     "start": "NODE_ENV=development webpack serve --config config/webpack/webpack.development.js",
     "build-staging": "rm -rf dist && NODE_ENV=staging webpack --config config/webpack/webpack.staging.js",
     "build-prod": "rm -rf dist && NODE_ENV=production webpack --config config/webpack/webpack.production.js",
-    "analyzer": "rm -rf dist && NODE_ENV=analyzer webpack --config config/webpack/webpack.analyzer.js",
+    "analyzer": "rm -rf dist && NODE_ENV=production webpack --config config/webpack/webpack.analyzer.js",
     "lint-check": "eslint './src/**/*.{ts,tsx}'",
     "type-check": "tsc",
     "test": "jest --config config/jest/jest.config.js",
