@@ -30,6 +30,6 @@
       "@cosmos/*": ["node_modules/@hotmart/cosmos/dist/*"]
     }
   },
-  "include": ["src"],
+  "include": ["./src", "./global.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

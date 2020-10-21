@@ -5,7 +5,7 @@ interface IState {
   hasError: boolean;
 }
 
-class PrivateErrorBoundary extends Component<{}, IState> {
+class PrivateErrorBoundary extends Component<Record<string, any>, IState> {
   constructor(props) {
     super(props);
     this.state = { hasError: false };
