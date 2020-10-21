@@ -21,6 +21,7 @@ function Routes() {
           <PublicRoute exact path="/public" component={() => <div>public</div>} />
           <PublicRoute exact path="/auth/login" component={Auth} />
           <PublicRoute exact path="/auth/logout" component={Auth} />
+          <PublicRoute exact path="/auth/renew" component={Auth} />
           <PrivateRoute exact path="/" component={Home} />
           <PrivateRoute exact path="/oi" component={() => <div>oi</div>} />
         </BrowserRouter>
