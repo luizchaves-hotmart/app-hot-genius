@@ -6,7 +6,7 @@ const config = {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './public',
-    host: 'local.analytics-beta.buildstaging.com',
+    host: 'local.YOUR_APP_NAME.buildstaging.com',
     port: 8080,
     compress: true,
     historyApiFallback: true,

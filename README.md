@@ -32,6 +32,18 @@ Getting Started with React and Typescript <br />
 127.0.0.1       local.YOUR_APP_NAME.buildstaging.com
 ```
 
+Open webpack.development file and change host
+```
+devServer: {
+  contentBase: './public',
+  host: 'local.YOUR_APP_NAME.buildstaging.com',
+  port: 8080,
+  compress: true,
+  historyApiFallback: true,
+  hot: true
+}
+```
+
 ## Configuring CAS
 
 To connect to CAS, you must fill the environment variables in the files 
