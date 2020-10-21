@@ -1,4 +1,6 @@
 import React from 'react';
+import '@cosmos/styles/utilities/sizing.css';
+import '@cosmos/styles/utilities/text/text.css';
 import '@cosmos/loading';
 
 function Loader(): JSX.Element {

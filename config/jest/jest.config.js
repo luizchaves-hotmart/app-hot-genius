@@ -1,10 +1,5 @@
 module.exports = {
   preset: 'ts-jest',
-  globals: {
-    'ts-jest': {
-      diagnostics: false
-    }
-  },
   rootDir: '../../',
   verbose: true,
   collectCoverage: true,
@@ -13,7 +8,12 @@ module.exports = {
     '!**/node_modules/**',
     '!**/dist/**'
   ],
-  setupFiles: ['jest-canvas-mock'],
+  setupFiles: [
+    'jest-canvas-mock'
+  ],
+  setupFilesAfterEnv: [
+    '<rootDir>/config/jest/jest-setup.ts'
+  ],
   coveragePathIgnorePatterns: [
     '<rootDir>/dist/',
     '<rootDir>/node_modules/'
@@ -22,10 +22,11 @@ module.exports = {
   moduleDirectories: ['src', 'node_modules'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   moduleNameMapper: {
-    '^src(.*)$': '<rootDir>/src$1',
+    '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'identity-obj-proxy',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$'
       : '<rootDir>/config/jest/__mocks__/file-mock.js',
-    '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'identity-obj-proxy',
+    '^src(.*)$': '<rootDir>/src$1',
+    'app/i18n': '<rootDir>/config/jest/__mocks__/i18n',
     '@cosmos(.*)$': '@hotmart/cosmos/dist/$1'
   }
 };

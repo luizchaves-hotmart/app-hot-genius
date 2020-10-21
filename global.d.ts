@@ -1,3 +1,5 @@
+declare let __webpack_public_path__;
+
 declare module '*.svg' {
   const content: any;
   export default content;
@@ -8,8 +10,9 @@ declare module 'worker-loader!*' {
 }
 
 declare namespace JSX {
-  // eslint-disable-next-line @typescript-eslint/interface-name-prefix
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   interface IntrinsicElements {
+    'astro-dashboard': any;
     'hot-alert': any;
     'hot-avatar': any;
     'hot-content': any;
@@ -39,12 +42,14 @@ declare namespace JSX {
     'hot-select-option': any;
     'hot-select-multiple': any;
     'hot-select-multiple-option': any;
-    'hot-badge': any;
+    'hot-tag': any;
     'hot-card': any;
     'hot-card-body': any;
     'hot-card-header': any;
+    'hot-card-footer': any;
     'hot-sidebar': any;
     'hot-sidebar-header': any;
+    'hot-sidebar-body': any;
     'hot-modal': any;
     'hot-modal-header': any;
     'hot-modal-body': any;

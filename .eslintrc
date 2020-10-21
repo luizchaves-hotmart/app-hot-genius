@@ -8,7 +8,6 @@
   },
   "extends": [
     "plugin:jest/recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "eslint:recommended"
   ],
@@ -16,8 +15,7 @@
     "jest",
     "react-hooks",
     "eslint-plugin-react",
-    "eslint-plugin-import",
-    "@typescript-eslint"
+    "eslint-plugin-import"
   ],
   "rules": {
     /* React Rules */
@@ -26,6 +24,7 @@
     "react/react-in-jsx-scope": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": 0,
+    "react/display-name": 0,
 
     /* Jest Rules */
     "jest/no-disabled-tests": "warn",
@@ -34,18 +33,12 @@
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
 
-    /* Typescript Rules */
-    "@typescript-eslint/ban-ts-ignore": 0,
-    "@typescript-eslint/no-use-before-define": 0,
-    "@typescript-eslint/explicit-function-return-type": 0,
-    "@typescript-eslint/no-explicit-any": 0,
-    "@typescript-eslint/no-inferrable-types": ["error"],
-    "@typescript-eslint/interface-name-prefix": ["error", { "prefixWithI": "always" }],
-
     /* App Rules */
+    "no-prototype-builtins": 0,
+    "no-use-before-define": 0,
+    "no-case-declarations": 0,
     "dot-notation": "error",
     "no-loop-func": "error",
-    "guard-for-in": "error",
     "prefer-template": "error",
     "no-nested-ternary": "error",
     "no-param-reassign": "error",
@@ -57,19 +50,16 @@
     "arrow-parens": ["error", "always"],
     "object-curly-spacing": ["error", "always"],
     "implicit-arrow-linebreak": ["error", "beside"],
+    "operator-linebreak": ["error", "before"],
     "new-cap": ["error", { "capIsNew": true }],
     "no-bitwise": ["error", { "int32Hint": true }],
     "quotes": ["error", "single", { "avoidEscape": true }],
-    "no-use-before-define": ["error", { "functions": false }],
-    "max-lines": ["error", { "max": 200, "skipComments": true }],
+    "max-lines": ["error", { "max": 250, "skipComments": true }],
     "no-duplicate-imports": ["error", { "includeExports": true }],
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "max-len": ["error", { "code": 120, "comments": 70, "tabWidth": 4 }],
-    "max-lines-per-function": ["error", { "max": 120, "skipComments": true }],
+    "max-len": ["error", { "code": 120, "comments": 120, "tabWidth": 2 }],
     "no-console": ["error", { "allow": ["time", "timeEnd", "warn", "error"] }],
-    "operator-linebreak": ["error", "before", { "overrides": { "&&": "after" } }],
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0, "maxBOF": 0 }],
-    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
     "padding-line-between-statements": ["error", { "blankLine": "always", "prev": "directive", "next": "*"}],
     "import/order": ["error", {"groups": ["builtin", "external", "internal", "parent", "sibling", "index"]}]
   },
@@ -82,6 +72,34 @@
   "globals": {
     "document": false
   },
+  "overrides": [
+    {
+      "files": "**/*.+(ts|tsx)",
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "plugins": ["@typescript-eslint"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "rules": {
+        "@typescript-eslint/ban-ts-comment": 0,
+        "@typescript-eslint/no-explicit-any": 0,
+        "@typescript-eslint/no-non-null-assertion": 0,
+        "@typescript-eslint/explicit-module-boundary-types": 0,
+        "@typescript-eslint/explicit-function-return-type": 0,
+        "@typescript-eslint/no-use-before-define": ["error", { "functions": false }],
+        "@typescript-eslint/no-inferrable-types": ["error"],
+        "@typescript-eslint/naming-convention": ["error",{
+          "selector": "interface",
+          "format": ["PascalCase"],
+          "custom": {
+            "regex": "^I[A-Z]",
+            "match": true
+          }
+        }]
+      }
+    }
+  ],
   "settings": {
     "react": {
       "version": "detect"

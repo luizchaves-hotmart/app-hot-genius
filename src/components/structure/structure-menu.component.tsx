@@ -1,18 +1,19 @@
 import React from 'react';
 
+import '@cosmos/tag';
 import '@cosmos/avatar';
-import '@cosmos/badge';
 import '@cosmos/collapse';
-import '@cosmos/dropdown';
 import '@cosmos/header';
 import '@cosmos/menu';
 import '@cosmos/menu-item';
 import '@cosmos/tooltip';
+import '@cosmos/dropdown';
+import authService from 'modules/auth/auth.service';
 
 function StructureMenu() {
   return (
     <hot-menu slot="menu">
-      <div slot="product-name">Analytics</div>
+      <div slot="product-name">App</div>
 
       <hot-header slot="header">
         <span slot="brand-name">Pro</span>
@@ -29,7 +30,9 @@ function StructureMenu() {
           <hot-dropdown-menu-item slot="menu">Item 3</hot-dropdown-menu-item>
           <hot-dropdown-menu-item slot="menu">Item 4</hot-dropdown-menu-item>
           <hot-dropdown-menu-divider slot="menu"></hot-dropdown-menu-divider>
-          <hot-dropdown-menu-item slot="menu">Logout</hot-dropdown-menu-item>
+          <hot-dropdown-menu-item slot="menu" onClick={() => authService.signoutRedirect()}>
+            Logout
+          </hot-dropdown-menu-item>
         </hot-dropdown>
       </hot-header>
 

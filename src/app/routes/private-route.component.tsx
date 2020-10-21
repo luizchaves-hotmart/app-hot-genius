@@ -1,8 +1,9 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { useSelector } from 'app/redux/redux.store';
+import React, { Fragment } from 'react';
+import { Route } from 'react-router-dom';
 
 import { PrivateErrorBoundary } from 'components/error';
+import { useSelector } from 'store/redux.store';
+import { Auth } from 'modules/auth';
 
 interface IProps {
   component: any;
@@ -19,12 +20,18 @@ function PrivateRoute(props: IProps) {
       exact={props.exact}
       path={props.path}
       render={() => {
-        return auth
-          ? <PrivateErrorBoundary>
-              <Component />
-            </PrivateErrorBoundary>
-          : <Redirect to="/" />;
-      }} />
+        return (
+          <Fragment>
+            <Auth />
+            {auth ? (
+              <PrivateErrorBoundary>
+                <Component />
+              </PrivateErrorBoundary>
+            ) : null}
+          </Fragment>
+        );
+      }}
+    />
   );
 }
 

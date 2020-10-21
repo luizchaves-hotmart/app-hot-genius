@@ -1,13 +1,16 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { Loader } from 'components/loader';
+import Auth from 'modules/auth/auth.component';
 import { Structure } from 'components/structure';
+import { Loader } from 'components/loader';
 import PublicRoute from './public-route.component';
 import PrivateRoute from './private-route.component';
 
-const LoginLoadable = lazy(() => import('modules/login/login.component'));
-const HomeLoadable = lazy(() => import('modules/home/home.component'));
+import('../app-cosmos');
+import('../i18n');
+
+const Home = lazy(() => import('pages/home/home.component'));
 
 function Routes() {
   return (
@@ -15,9 +18,12 @@ function Routes() {
       <hot-toast />
       <Suspense fallback={<Loader />}>
         <BrowserRouter>
-          <PublicRoute exact path="/" component={LoginLoadable} />
-          <PublicRoute exact path="/login" component={LoginLoadable} />
-          <PrivateRoute exact path="/home" component={HomeLoadable} />
+          <PublicRoute exact path="/public" component={() => <div>public</div>} />
+          <PublicRoute exact path="/auth/login" component={Auth} />
+          <PublicRoute exact path="/auth/logout" component={Auth} />
+          <PublicRoute exact path="/auth/renew" component={Auth} />
+          <PrivateRoute exact path="/" component={Home} />
+          <PrivateRoute exact path="/oi" component={() => <div>oi</div>} />
         </BrowserRouter>
       </Suspense>
     </Structure>
