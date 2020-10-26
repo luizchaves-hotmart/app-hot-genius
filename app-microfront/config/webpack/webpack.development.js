@@ -5,9 +5,14 @@ const config = {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
+    },
     contentBase: './public',
     host: 'local.analytics-beta.buildstaging.com',
-    port: 8080,
+    port: 8081,
     compress: true,
     historyApiFallback: true,
     hot: true

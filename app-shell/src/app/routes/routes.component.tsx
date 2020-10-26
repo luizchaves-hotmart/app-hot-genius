@@ -24,9 +24,7 @@ function Routes() {
           <PublicRoute exact path="/auth/logout" component={Auth} />
           <PublicRoute exact path="/auth/renew" component={Auth} />
           <PrivateRoute exact path="/" component={Home} />
-          <PrivateRoute exact path="/private" component={() => (
-            <div>private <Button onClick={() => console.warn('olar')} /></div>
-          )} />
+          <PrivateRoute exact path="/module" component={() => <Button onClick={() => console.warn('olar')} />} />
         </BrowserRouter>
       </Suspense>
     </Structure>
