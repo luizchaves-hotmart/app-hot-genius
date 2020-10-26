@@ -11,6 +11,7 @@ import('../app-cosmos');
 import('../i18n');
 
 const Home = lazy(() => import('pages/home/home.component'));
+const Button = lazy(() => import('microfront/Button'));
 
 function Routes() {
   return (
@@ -23,7 +24,9 @@ function Routes() {
           <PublicRoute exact path="/auth/logout" component={Auth} />
           <PublicRoute exact path="/auth/renew" component={Auth} />
           <PrivateRoute exact path="/" component={Home} />
-          <PrivateRoute exact path="/oi" component={() => <div>oi</div>} />
+          <PrivateRoute exact path="/private" component={() => (
+            <div>private <Button onClick={() => console.warn('olar')} /></div>
+          )} />
         </BrowserRouter>
       </Suspense>
     </Structure>

@@ -23,17 +23,22 @@ function Auth() {
   }, []);
 
   async function authProcess() {
+    const authRenewRoute = new URL(authService.userManager.settings.silent_redirect_uri).pathname;
+    const authLoginRoute = new URL(authService.userManager.settings.redirect_uri).pathname;
+    const authLogoutRoute = new URL(authService.userManager.settings.post_logout_redirect_uri).pathname;
+    const authRoutes = [authRenewRoute, authLoginRoute, authLogoutRoute];
+
     try {
       let user = await authService.getUser();
-      if (!user || location.pathname === '/auth/renew') user = await authService.signinCallback();
-      localStorage.setItem('token', user.id_token);
+      if (!user || location.pathname === authRenewRoute) user = await authService.signinCallback();
+      localStorage.setItem('token', user?.id_token);
       dispatch(authSlice.actions.setAuth(user));
 
       const redirectRoute = sessionStorage.getItem(AUTH_REDIRECT_STORAGE);
       redirectRoute && history.push(redirectRoute);
       sessionStorage.removeItem(AUTH_REDIRECT_STORAGE);
+      window.dispatchEvent(new Event('addUserLoaded'));
     } catch (e) {
-      const authRoutes = ['/auth/logout', '/auth/login', '/auth/renew'];
       const currRoute = !authRoutes.includes(location.pathname)
         ? `${location.pathname}${location.search}`
         : AUTH_DEFAULT_ROUTE;

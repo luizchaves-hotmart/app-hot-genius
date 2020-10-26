@@ -1,18 +1,8 @@
-declare let __webpack_public_path__;
-
-declare module '*.svg' {
-  const content: any;
-  export default content;
-}
-
-declare module 'worker-loader!*' {
-  export default class WebpackWorker extends Worker {}
-}
+declare module 'microfront/Button';
 
 declare namespace JSX {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   interface IntrinsicElements {
-    'astro-dashboard': any;
     'hot-alert': any;
     'hot-avatar': any;
     'hot-content': any;

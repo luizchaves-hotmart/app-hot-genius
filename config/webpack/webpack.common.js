@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
+const { ModuleFederationPlugin } = require('webpack').container;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const shared = require('../../package.json').dependencies;
 
 require('dotenv')
   .config({
@@ -8,7 +10,7 @@ require('dotenv')
   });
 
 const common = {
-  entry: './src/app/app.tsx',
+  entry: './src/app/app.ts',
   output: {
     publicPath: '/',
     path: path.resolve(__dirname, '../../dist'),
@@ -29,10 +31,6 @@ const common = {
   },
   module: {
     rules: [
-      {
-        test: /\.worker\.js$/,
-        use: { loader: 'worker-loader' }
-      },
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
@@ -55,6 +53,13 @@ const common = {
     ]
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: 'microfront',
+      remotes: {
+        microfront: 'microfront@http://local.analytics-beta.buildstaging.com:8081/remoteEntry.js',
+      },
+      shared
+    }),
     new HtmlWebpackPlugin({
       isProd: process.env.NODE_ENV === 'production',
       template: './public/index.html',
