@@ -3,21 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bc91cc53-4ece-4dcf-b522-ad196b036391" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-microfront/config/webpack/webpack.common.js" beforeDir="false" afterPath="$PROJECT_DIR$/app-microfront/config/webpack/webpack.common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-microfront/config/webpack/webpack.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/app-microfront/config/webpack/webpack.development.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-microfront/env/.development" beforeDir="false" afterPath="$PROJECT_DIR$/app-microfront/env/.development" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-microfront/env/.production" beforeDir="false" afterPath="$PROJECT_DIR$/app-microfront/env/.production" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-microfront/env/.staging" beforeDir="false" afterPath="$PROJECT_DIR$/app-microfront/env/.staging" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-microfront/src/app/bootstrap.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-microfront/src/app/bootstrap.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-microfront/src/app/i18n.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app-microfront/src/app/i18n.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-microfront/src/components/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-microfront/src/components/button/button.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-microfront/src/modules/button/button.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shell/config/webpack/webpack.common.js" beforeDir="false" afterPath="$PROJECT_DIR$/app-shell/config/webpack/webpack.common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shell/config/webpack/webpack.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/app-shell/config/webpack/webpack.development.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shell/env/.development" beforeDir="false" afterPath="$PROJECT_DIR$/app-shell/env/.development" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shell/env/.production" beforeDir="false" afterPath="$PROJECT_DIR$/app-shell/env/.production" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shell/env/.staging" beforeDir="false" afterPath="$PROJECT_DIR$/app-shell/env/.staging" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shell/src/app/i18n.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app-shell/src/app/i18n.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-shell/src/app/routes/routes.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-shell/src/app/routes/routes.component.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +99,7 @@
       <workItem from="1603707088780" duration="4277000" />
       <workItem from="1603715196722" duration="1152000" />
       <workItem from="1603717134000" duration="2000" />
-      <workItem from="1603731724051" duration="2549000" />
+      <workItem from="1603731724051" duration="2703000" />
     </task>
     <servers />
   </component>
