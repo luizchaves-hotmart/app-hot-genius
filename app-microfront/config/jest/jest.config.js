@@ -4,7 +4,7 @@ module.exports = {
   verbose: true,
   collectCoverage: true,
   collectCoverageFrom: [
-    '**/src/*.{ts,tsx}',
+    '**/src/**/*.{ts,tsx}',
     '!**/node_modules/**',
     '!**/dist/**'
   ],
