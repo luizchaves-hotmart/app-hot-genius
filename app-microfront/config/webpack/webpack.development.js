@@ -11,8 +11,8 @@ const config = {
       'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
     },
     contentBase: './public',
-    host: 'local.analytics-beta.buildstaging.com',
-    port: 8081,
+    host: process.env.APP_HOST,
+    port: process.env.APP_PORT,
     compress: true,
     historyApiFallback: true,
     hot: true

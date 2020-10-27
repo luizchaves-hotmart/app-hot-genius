@@ -5,7 +5,7 @@ import '@cosmos/styles/reset.css';
 import '@cosmos/styles/base.css';
 import '@cosmos/styles/theme.css';
 
-import Button from '../components/button/button.component';
+import Button from 'modules/button/button.component';
 
 ReactDOM.render((
   <Suspense fallback="loading...">

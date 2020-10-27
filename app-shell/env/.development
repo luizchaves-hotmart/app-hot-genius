@@ -2,4 +2,5 @@
 AUTH_CLIENT_ID=5a97209e-d66d-487f-b0b6-22fc8049a1c1
 
 # APP
-APP_URL=http://local.analytics-beta.buildstaging.com:8080
+APP_HOST=local.analytics-beta.buildstaging.com
+APP_PORT=8080

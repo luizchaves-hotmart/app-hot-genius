@@ -66,7 +66,8 @@ const common = {
       favicon: './public/favicon.ico'
     }),
     new webpack.EnvironmentPlugin([
-      'APP_URL',
+      'APP_HOST',
+      'APP_PORT',
       'AUTH_CLIENT_ID'
     ])
   ]

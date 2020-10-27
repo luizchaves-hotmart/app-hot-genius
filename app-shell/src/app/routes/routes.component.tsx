@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, {lazy, Suspense, useEffect} from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import Auth from 'modules/auth/auth.component';

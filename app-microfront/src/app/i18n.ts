@@ -3,6 +3,8 @@ import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-xhr-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
+const baseURL = `//${process.env.APP_HOST}${process.env.APP_PORT ? `:${process.env.APP_PORT}` : ''}`;
+
 i18n
   .use(Backend)
   .use(LanguageDetector)
@@ -12,7 +14,7 @@ i18n
     fallbackLng: 'pt-BR',
     whitelist: ['pt-BR', 'es', 'fr', 'en'],
     backend: {
-      loadPath: `${process.env.APP_URL}/locales/{{lng}}/{{ns}}.json`
+      loadPath: `${baseURL}/locales/{{lng}}/{{ns}}.json`
     },
     cache: {
       enabled: false

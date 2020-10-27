@@ -20,7 +20,6 @@ const common = {
     extensions: ['.js', '.ts', '.tsx', '.json'],
     alias: {
       app: path.resolve(__dirname, '../../src/app/'),
-      components: path.resolve(__dirname, '../../src/components/'),
       modules: path.resolve(__dirname, '../../src/modules/'),
       '@cosmos': '@hotmart/cosmos/dist'
     },
@@ -55,7 +54,7 @@ const common = {
       library: { type: 'var', name: 'microfront' },
       filename: 'remoteEntry.js',
       exposes: {
-        './Button': './src/components/button/button.component.tsx',
+        './Button': './src/modules/button/button.component.tsx',
       },
       shared
     }),
@@ -65,7 +64,8 @@ const common = {
       favicon: './public/favicon.ico'
     }),
     new webpack.EnvironmentPlugin([
-      'APP_URL',
+      'APP_HOST',
+      'APP_PORT',
       'AUTH_CLIENT_ID'
     ])
   ]
