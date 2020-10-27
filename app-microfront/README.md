@@ -29,28 +29,22 @@
 127.0.0.1       local.YOUR_MICROFRONT_NAME.buildstaging.com
 ```
 
-Open webpack.development file and change host
-```
-devServer: {
-  contentBase: './public',
-  host: 'local.YOUR_MICROFRONT_NAME.buildstaging.com',
-  ...
-}
-```
-
-## Configuring CAS
+## Configuring Environments
 
 To connect to CAS, you must fill the environment variables in the files 
 `/env/.development`, `/env/.staging` and `/env/.production`.
 
 ```
+APP_HOST=?
+APP_PORT=?
 AUTH_CLIENT_ID=?
 ```
 
 Ex.:
 ```
-AUTH_CLIENT_ID=5a97209e-d66d-487f-b0b6-22fc8049a1c1
-APP_URL=http://local.databox.buildstaging.com:8081
+APP_PORT=8081
+APP_HOST=local.databox.buildstaging.com
+AUTH_CLIENT_ID=5a77109e-d66d-487f-c0b6-22fc8049a1c1
 ```
 
 ## Running
@@ -68,7 +62,7 @@ Starting on development mode:
 npm start
 ```
 
-* Open http://local.YOUR_MICROFRONT_NAME.buildstaging.com
+* Open http://local.YOUR_MICROFRONT_NAME.buildstaging.com:8081
 * Have fun coding!
 
 ## Copyright

@@ -31,7 +31,7 @@ function Auth() {
     try {
       let user = await authService.getUser();
       if (!user || location.pathname === authRenewRoute) user = await authService.signinCallback();
-      localStorage.setItem('token', user?.id_token);
+      localStorage.setItem('appName:token', user?.id_token);
       dispatch(authSlice.actions.setAuth(user));
 
       const redirectRoute = sessionStorage.getItem(AUTH_REDIRECT_STORAGE);
@@ -43,7 +43,7 @@ function Auth() {
         ? `${location.pathname}${location.search}`
         : AUTH_DEFAULT_ROUTE;
 
-      localStorage.removeItem('token');
+      localStorage.removeItem('appName:token');
       sessionStorage.setItem(AUTH_REDIRECT_STORAGE, currRoute);
       await authService.signoutCallback();
       await authService.signinRedirect();

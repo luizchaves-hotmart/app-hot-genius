@@ -6,7 +6,7 @@
 
 # Quickstart React, Typescript, CAS and Module Federation
 
-This repository has a [app shell](../app-shell) and a [app microfront](../app-microfront)
+This repository has a [app shell](../app-shell) and a [app microfront](../app-microfront) projects
 working together with webpack module federation 
 
 Follow the steps presented in the two projects and have fun!
