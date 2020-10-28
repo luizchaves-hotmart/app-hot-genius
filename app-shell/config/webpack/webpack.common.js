@@ -56,7 +56,7 @@ const common = {
     new ModuleFederationPlugin({
       name: 'microfront',
       remotes: {
-        microfront: 'microfront@http://local.analytics-beta.buildstaging.com:8081/remoteEntry.js',
+        microfront: 'microfront@http://local.analytics-beta.buildstaging.com:8081/remoteEntry.js'
       },
       shared
     }),

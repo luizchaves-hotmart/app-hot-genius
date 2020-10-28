@@ -5,10 +5,8 @@ import '@cosmos/styles/reset.css';
 import '@cosmos/styles/base.css';
 import '@cosmos/styles/theme.css';
 
-import Button from 'modules/button/button.component';
-
 ReactDOM.render((
   <Suspense fallback="loading...">
-    <Button />
+    <div>oi</div>
   </Suspense>
 ), document.getElementById('root'));

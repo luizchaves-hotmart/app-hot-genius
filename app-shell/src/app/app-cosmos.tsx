@@ -1,3 +1,5 @@
+import { registerApplication, start } from 'single-spa';
+
 /* Cosmos global styles */
 import '@cosmos/styles/reset.css';
 import '@cosmos/styles/base.css';
@@ -14,3 +16,11 @@ import '@cosmos/toast';
 import '@cosmos/styles/utilities/sizing.css';
 import '@cosmos/styles/utilities/text/text.css';
 import '@cosmos/styles/utilities/border/border.css';
+
+registerApplication(
+  'microfront',
+  () => import('microfront/Microfront'),
+  (location) => location.pathname.startsWith('/')
+);
+
+start();

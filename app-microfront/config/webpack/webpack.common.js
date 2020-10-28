@@ -20,7 +20,6 @@ const common = {
     extensions: ['.js', '.ts', '.tsx', '.json'],
     alias: {
       app: path.resolve(__dirname, '../../src/app/'),
-      modules: path.resolve(__dirname, '../../src/modules/'),
       '@cosmos': '@hotmart/cosmos/dist'
     },
     unsafeCache: true
@@ -54,7 +53,7 @@ const common = {
       library: { type: 'var', name: 'microfront' },
       filename: 'remoteEntry.js',
       exposes: {
-        './Button': './src/modules/button/button.component.tsx',
+        './Microfront': './src/microfront.component.tsx'
       },
       shared
     }),
