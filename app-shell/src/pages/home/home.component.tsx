@@ -47,7 +47,7 @@ function DrawMicrofront(props) {
     registerApplication(
       `${props.dataGrid.i}-microfront`,
       () => import('microfront/Microfront'),
-      (location) => true //location.pathname.startsWith('/')
+      () => true //(location) => location.pathname.startsWith('/')
     );
     registerApplication(
       `${props.dataGrid.i}-web-component`,
