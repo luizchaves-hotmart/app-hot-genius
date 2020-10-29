@@ -14,4 +14,4 @@ import '@cosmos/toast';
 import '@cosmos/styles/utilities/sizing.css';
 import '@cosmos/styles/utilities/text/text.css';
 import '@cosmos/styles/utilities/border/border.css';
-
+import '@cosmos/styles/utilities/scroll.css';

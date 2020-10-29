@@ -1,12 +1,11 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
-import '@cosmos/styles/reset.css';
-import '@cosmos/styles/base.css';
-import '@cosmos/styles/theme.css';
+// import '../auth.service';
+// <hot-auth />
+// const getUser = (user) => console.warn('user', user);
+// const redirect = (redirect) => console.warn('redirect', redirect);
+// window.addEventListener('auth:user', getUser);
+// window.addEventListener('auth:redirect', redirect);
 
-ReactDOM.render((
-  <Suspense fallback="loading...">
-    <div>oi</div>
-  </Suspense>
-), document.getElementById('root'));
+ReactDOM.render(<div>olar !</div>, document.getElementById('root'));

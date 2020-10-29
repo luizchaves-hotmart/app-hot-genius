@@ -12,6 +12,7 @@ declare module 'worker-loader!*' {
 declare namespace JSX {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   interface IntrinsicElements {
+    'hot-auth': any;
     'astro-dashboard': any;
     'hot-alert': any;
     'hot-avatar': any;

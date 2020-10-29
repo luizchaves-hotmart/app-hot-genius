@@ -10,7 +10,7 @@ require('dotenv')
   });
 
 const common = {
-  entry: './src/app/index.ts',
+  entry: './src/app/app.ts',
   output: {
     path: path.resolve(__dirname, '../../dist'),
     filename: '[name].[fullhash].js',
@@ -53,7 +53,8 @@ const common = {
       library: { type: 'var', name: 'microfront' },
       filename: 'remoteEntry.js',
       exposes: {
-        './Microfront': './src/microfront.component.tsx'
+        './Microfront': './src/microfront.component.tsx',
+        './WebComponent': './src/web-component.component.tsx'
       },
       shared
     }),

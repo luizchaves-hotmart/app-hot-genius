@@ -1,4 +1,5 @@
 declare module 'microfront/Microfront';
+declare module 'microfront/WebComponent';
 
 declare namespace JSX {
   // eslint-disable-next-line @typescript-eslint/naming-convention
