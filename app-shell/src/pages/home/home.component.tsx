@@ -19,7 +19,7 @@ function HomePage() {
   ]);
 
   function onChangeLayout(data) {
-    console.log('onChangeLayout', data);
+    console.warn('onChangeLayout', data);
     setLayouts(data);
   }
 
