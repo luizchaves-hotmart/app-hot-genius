@@ -1,5 +1,4 @@
 import AuthService, { Bootstrap } from '@hotmart/cas-js';
-import { TAuth } from 'modules/auth/auth.interfaces';
 
 const authService = new AuthService({
   env: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -7,7 +6,7 @@ const authService = new AuthService({
   // accessTokenExpiringNotificationTime: 290
 });
 
-const bootstrap = new Bootstrap<TAuth>(authService);
+const bootstrap = new Bootstrap(authService);
 
 export { bootstrap };
 export default authService;
