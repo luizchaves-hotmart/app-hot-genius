@@ -1,9 +1,9 @@
 declare module 'microfront/Microfront';
-declare module 'microfront/WebComponent';
 
 declare namespace JSX {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   interface IntrinsicElements {
+    'application': any;
     'hot-alert': any;
     'hot-avatar': any;
     'hot-content': any;

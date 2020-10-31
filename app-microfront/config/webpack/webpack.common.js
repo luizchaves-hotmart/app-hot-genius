@@ -10,16 +10,16 @@ require('dotenv')
   });
 
 const common = {
-  entry: './src/app/app.ts',
+  entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, '../../dist'),
     filename: '[name].[fullhash].js',
     chunkFilename: '[chunkhash].bundle.js'
   },
   resolve: {
+    symlinks: false,
     extensions: ['.js', '.ts', '.tsx', '.json'],
     alias: {
-      app: path.resolve(__dirname, '../../src/app/'),
       '@cosmos': '@hotmart/cosmos/dist'
     },
     unsafeCache: true
@@ -53,8 +53,7 @@ const common = {
       library: { type: 'var', name: 'microfront' },
       filename: 'remoteEntry.js',
       exposes: {
-        './Microfront': './src/microfront.component.tsx',
-        './WebComponent': './src/web-component.component.tsx'
+        './Microfront': './src/microfront.component.tsx'
       },
       shared
     }),

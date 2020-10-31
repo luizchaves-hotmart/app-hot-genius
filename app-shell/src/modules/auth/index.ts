@@ -1,6 +1,5 @@
-import Auth from './auth.component';
 import authSlice from './auth.slice';
-import authService from './auth.service';
+import authService, { bootstrap } from './auth.service';
 
 export * from './auth.interfaces';
-export { Auth, authSlice, authService };
+export { authSlice, authService, bootstrap };

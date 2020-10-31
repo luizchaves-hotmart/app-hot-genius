@@ -1,31 +1,43 @@
-import React, { lazy, Suspense } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React, { lazy, Suspense, useEffect } from 'react';
+import { BrowserRouter, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
-import Auth from 'modules/auth/auth.component';
+import { bootstrap, authSlice } from 'modules/auth';
 import { Structure } from 'components/structure';
 import { Loader } from 'components/loader';
-import PublicRoute from './public-route.component';
 import PrivateRoute from './private-route.component';
+import PublicRoute from './public-route.component';
 
 import('../app-cosmos');
 import('../i18n');
 
 const Home = lazy(() => import('pages/home/home.component'));
+const Module = lazy(() => import('pages/module/module.component'));
 
 function Routes() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    bootstrap.subscribe({
+      next: (auth) => dispatch(authSlice.actions.setAuth(auth))
+    });
+  }, []);
+
   return (
-    <Structure>
-      <hot-toast />
-      <Suspense fallback={<Loader />}>
-        <BrowserRouter>
-          <PublicRoute exact path="/public" component={() => <div>public</div>} />
-          <PublicRoute exact path="/auth/login" component={Auth} />
-          <PublicRoute exact path="/auth/logout" component={Auth} />
-          <PublicRoute exact path="/auth/renew" component={Auth} />
-          <PrivateRoute exact path="/" component={Home} />
-        </BrowserRouter>
-      </Suspense>
-    </Structure>
+    <BrowserRouter>
+      <Structure>
+        <hot-toast />
+        <Switch>
+          <Suspense fallback={<Loader />}>
+            <PublicRoute exact path="/" component={Home} />
+            <PrivateRoute exact path="/module" component={Module} />
+            <PrivateRoute exact path="/auth/logout" component={Loader} />
+            <PrivateRoute exact path="/auth/login" component={Loader} />
+            <PrivateRoute exact path="/auth/renew" component={Loader} />
+          </Suspense>
+        </Switch>
+      </Structure>
+    </BrowserRouter>
   );
 }
 

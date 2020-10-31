@@ -1,4 +1,6 @@
 import React from 'react';
+import { faHome } from '@fortawesome/pro-regular-svg-icons/faHome';
+import { faFolder } from '@fortawesome/pro-regular-svg-icons/faFolder';
 
 import '@cosmos/tag';
 import '@cosmos/avatar';
@@ -8,7 +10,9 @@ import '@cosmos/menu';
 import '@cosmos/menu-item';
 import '@cosmos/tooltip';
 import '@cosmos/dropdown';
+
 import authService from 'modules/auth/auth.service';
+import StructureMenuItem from './structure-menu-item.component';
 
 function StructureMenu() {
   return (
@@ -36,15 +40,8 @@ function StructureMenu() {
         </hot-dropdown>
       </hot-header>
 
-      <hot-menu-item active>
-        <div className="hot-application-menu__icon"/>
-        <span>Item 1</span>
-      </hot-menu-item>
-
-      <hot-menu-item>
-        <div className="hot-application-menu__icon"/>
-        <span>Item 2</span>
-      </hot-menu-item>
+      <StructureMenuItem link="/" icon={faHome} name="Rota pública" />
+      <StructureMenuItem link="/module" icon={faFolder} name="rota privada" />
     </hot-menu>
   );
 }

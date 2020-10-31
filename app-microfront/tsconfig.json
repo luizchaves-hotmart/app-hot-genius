@@ -22,9 +22,6 @@
     "esModuleInterop": true,                  /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
     "baseUrl": ".",
     "paths": {
-      "app/*": ["src/app/*"],
-      "components/*": ["src/components/*"],
-      "modules/*": ["src/modules/*"],
       "@cosmos/*": ["node_modules/@hotmart/cosmos/dist/*"]
     }
   },

@@ -18,6 +18,7 @@ const common = {
     chunkFilename: '[chunkhash].bundle.js'
   },
   resolve: {
+    symlinks: false,
     extensions: ['.js', '.ts', '.tsx', '.json'],
     alias: {
       app: path.resolve(__dirname, '../../src/app/'),

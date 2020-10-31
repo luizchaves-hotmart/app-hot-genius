@@ -1,6 +1,5 @@
 import { useSelector as useReduxSelector, TypedUseSelectorHook } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
 import { authSlice } from 'modules/auth';
@@ -13,7 +12,7 @@ const rootReducer = {
 export const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
 export const store = configureStore({
   reducer: rootReducer,
-  middleware: [thunk, logger],
+  middleware: [thunk],
   devTools: process.env.NODE_ENV !== 'production'
 });
 

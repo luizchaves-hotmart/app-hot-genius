@@ -1,9 +1,10 @@
-import React, { Fragment } from 'react';
+import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 
+import { Loader } from 'components/loader';
 import { PrivateErrorBoundary } from 'components/error';
 import { useSelector } from 'store/redux.store';
-import { Auth } from 'modules/auth';
+import { bootstrap } from 'modules/auth';
 
 interface IProps {
   component: any;
@@ -12,26 +13,27 @@ interface IProps {
 }
 
 function PrivateRoute(props: IProps) {
-  const auth = useSelector((state) => state.auth);
-  const Component = props.component;
-
   return (
     <Route
       exact={props.exact}
       path={props.path}
-      render={() => {
-        return (
-          <Fragment>
-            <Auth />
-            {auth ? (
-              <PrivateErrorBoundary>
-                <Component />
-              </PrivateErrorBoundary>
-            ) : null}
-          </Fragment>
-        );
-      }}
+      render={() => <PrivateBootstrap {...props} />}
     />
+  );
+}
+
+function PrivateBootstrap(props: IProps) {
+  const auth = useSelector((state) => state.auth);
+  const Component = props.component;
+
+  useEffect(() => {
+    bootstrap.start();
+  }, []);
+
+  return !auth ? <Loader /> : (
+    <PrivateErrorBoundary>
+      <Component />
+    </PrivateErrorBoundary>
   );
 }
 
