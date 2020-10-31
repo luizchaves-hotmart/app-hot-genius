@@ -50,7 +50,6 @@ const common = {
   plugins: [
     new ModuleFederationPlugin({
       name: 'microfront',
-      library: { type: 'var', name: 'microfront' },
       filename: 'remoteEntry.js',
       exposes: {
         './Microfront': './src/microfront.component.tsx'

@@ -41,7 +41,7 @@ function StructureMenu() {
       </hot-header>
 
       <StructureMenuItem link="/" icon={faHome} name="Rota pública" />
-      <StructureMenuItem link="/module" icon={faFolder} name="rota privada" />
+      <StructureMenuItem link="/module" icon={faFolder} name="Rota privada" />
     </hot-menu>
   );
 }

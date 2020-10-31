@@ -2,6 +2,7 @@ import React from 'react';
 
 import '@cosmos/content';
 import '@cosmos/structure';
+import './structure.component.scss';
 
 import StructureMenu from './structure-menu.component';
 
