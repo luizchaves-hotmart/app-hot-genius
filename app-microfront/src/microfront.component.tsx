@@ -1,14 +1,6 @@
-import React, { useEffect } from 'react';
-import { bootstrap as Bootstrap } from './auth.service';
+import React from 'react';
 
 function Microfront() {
-  useEffect(() => {
-    Bootstrap.subscribe({
-      next: (auth) => console.warn(auth)
-    });
-    Bootstrap.start();
-  }, []);
-
   return <div>Microfront</div>;
 }
 
