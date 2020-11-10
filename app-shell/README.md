@@ -20,6 +20,7 @@
 
 ##### Private Packages
 * [@hotmart/cosmos](https://github.com/Hotmart-Org/cosmos)
+* [@hotmart/cas-js](https://github.com/Hotmart-Org/cas-js)
 
 ### For the first time only:
 
