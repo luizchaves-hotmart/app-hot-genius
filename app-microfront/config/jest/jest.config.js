@@ -2,12 +2,17 @@ module.exports = {
   preset: 'ts-jest',
   rootDir: '../../',
   verbose: true,
-  collectCoverage: false,
+  collectCoverage: true,
+  collectCoverageFrom: [
+    '**/src/**/*.{ts,tsx}',
+    '!**/node_modules/**',
+    '!**/dist/**'
+  ],
   setupFiles: [
     'jest-canvas-mock'
   ],
   setupFilesAfterEnv: [
-    '<rootDir>/config/jest/jest-setup.ts'
+    '<rootDir>/config/jest/jest-setup.js'
   ],
   coveragePathIgnorePatterns: [
     '<rootDir>/dist/',
