@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Microfront from './microfront.component';
+import Main from './main.component';
 import { bootstrap } from './auth.service';
 
+bootstrap.subscribe({
+  next: (user) => console.warn('user', user)
+});
 bootstrap.start();
 
-ReactDOM.render(<Microfront />, document.body);
+ReactDOM.render(<Main />, document.getElementById('root'));

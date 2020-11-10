@@ -18,16 +18,14 @@
     "@fortawesome/pro-regular-svg-icons": "^5.8.1",
     "@fortawesome/pro-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "@hotmart/cas-js": "^2.0.1",
+    "@hotmart/cas-js": "^3.0.0",
     "@hotmart/cosmos": "3.1.16",
     "i18next": "^19.8.2",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-xhr-backend": "^3.2.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-i18next": "^11.7.3",
-    "single-spa": "^5.8.0",
-    "single-spa-react": "^3.1.0"
+    "react-i18next": "^11.7.3"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",

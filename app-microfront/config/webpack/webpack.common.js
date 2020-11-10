@@ -52,14 +52,15 @@ const common = {
       name: 'microfront',
       filename: 'remoteEntry.js',
       exposes: {
-        './Microfront': './src/microfront.component.tsx'
+        './Microfront': './src/main.component.tsx'
       },
       shared
     }),
     new HtmlWebpackPlugin({
       isProd: process.env.NODE_ENV === 'production',
       template: './public/index.html',
-      favicon: './public/favicon.ico'
+      favicon: './public/favicon.ico',
+      chunks: ['main']
     }),
     new webpack.EnvironmentPlugin([
       'APP_HOST',
