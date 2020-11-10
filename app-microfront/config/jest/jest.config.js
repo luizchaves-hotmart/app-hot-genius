@@ -2,12 +2,7 @@ module.exports = {
   preset: 'ts-jest',
   rootDir: '../../',
   verbose: true,
-  collectCoverage: true,
-  collectCoverageFrom: [
-    '**/src/**/*.{ts,tsx}',
-    '!**/node_modules/**',
-    '!**/dist/**'
-  ],
+  collectCoverage: false,
   setupFiles: [
     'jest-canvas-mock'
   ],
