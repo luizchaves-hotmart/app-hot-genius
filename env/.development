@@ -1,5 +1,0 @@
-# CAS Hotmart
-AUTH_CLIENT_ID=?
-
-# APP
-APP_URL=http://local.YOUR_APP_NAME.buildstaging.com:8080
