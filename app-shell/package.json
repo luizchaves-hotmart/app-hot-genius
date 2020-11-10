@@ -9,7 +9,7 @@
     "analyzer": "rm -rf dist && NODE_ENV=production webpack --config config/webpack/webpack.analyzer.js",
     "lint-check": "eslint './src/**/*.{ts,tsx}'",
     "type-check": "tsc",
-    "test": "jest --config config/jest/jest.config.js --passWithNoTests",
+    "test": "jest --config config/jest/jest.config.js --passWithNoTests --forceExit --detectOpenHandles",
     "prepush": "npm run type-check && npm run lint-check && npm run test"
   },
   "dependencies": {
