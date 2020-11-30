@@ -19,7 +19,7 @@ function Routes() {
 
   useEffect(() => {
     bootstrap.subscribe({
-      next: (auth) => dispatch(authSlice.actions.setAuth(auth))
+      next: (user) => dispatch(authSlice.actions.setAuth(user))
     });
   }, []);
 

@@ -4,7 +4,7 @@ import Microfront from './microfront.component'
 import '@cosmos/loading'
 import './i18n'
 
-export default function WidgetExampleMain() {
+export default function MicrofrontMain() {
   return (
     <Suspense fallback={<hot-loading />}>
       <Microfront />
