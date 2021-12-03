@@ -1,8 +1,0 @@
-description:
-impact:
-reportable: false
-pci: false
-products:
-- CAS
-squads:
-- AuthN
