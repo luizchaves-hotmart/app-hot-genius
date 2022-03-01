@@ -43,8 +43,7 @@ AUTH_CLIENT_ID=?
 
 Ex.:
 ```
-APP_PORT=8080
-APP_HOST=local.databox.buildstaging.com
+APP_HOST=local.databox.buildstaging.com:8080
 AUTH_CLIENT_ID=5a77109e-d66d-487f-c0b6-22fc8049a1c1
 ```
 
@@ -60,7 +59,7 @@ npm install
 Starting on development mode:
 
 ```sh
-npm start
+npm run start
 ```
 
 * Open http://local.YOUR_APP_NAME.buildstaging.com:8080

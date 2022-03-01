@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const commonConfig = require('./webpack.common')
-const host = new URL(process.env.APP_HOST).host.replace(':8080', '')
+const host = process.env.APP_HOST.replace(':8080', '')
 
 const config = {
   ...commonConfig,
