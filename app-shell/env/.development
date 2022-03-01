@@ -1,6 +1,6 @@
 # CAS Hotmart
-AUTH_CLIENT_ID=73a116f6-27a1-4c6c-828b-4c85994d1cb5
+AUTH_CLIENT_ID=?
 
 # APP
-APP_HOST=local.astrobox.buildstaging.com:8080
-APP_MICROFRONT=local.astrobox.buildstaging.com:8081
+APP_HOST=local.YOUR_APP.buildstaging.com:8080
+APP_MICROFRONT=local.YOUR_MICROFRONT_APP.buildstaging.com:8081
