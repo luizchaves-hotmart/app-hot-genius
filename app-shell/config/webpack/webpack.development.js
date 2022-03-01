@@ -1,22 +1,22 @@
-const commonConfig = require('./webpack.common');
+/* eslint-disable @typescript-eslint/no-var-requires */
+const commonConfig = require('./webpack.common')
+const host = new URL(process.env.APP_HOST).host.replace(':8080', '')
 
 const config = {
   ...commonConfig,
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
-    },
-    contentBase: './public',
-    host: process.env.APP_HOST,
-    port: process.env.APP_PORT,
+    host,
+    port: 8080,
     compress: true,
     historyApiFallback: true,
-    hot: true
+    hot: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'X-Requested-With'
+    }
   }
-};
+}
 
-module.exports = config;
+module.exports = config

@@ -10,10 +10,10 @@
 
 ##### Public Packages
 * [React](https://github.com/facebook/react)
-* [I18next](https://www.i18next.com)
-* [Redux](https://redux.js.org)
+* [I18next](https://react.i18next.com)
+* [Recoil](https://recoiljs.org)
 * [TypeScript](https://github.com/microsoft/TypeScript)
-* [Sass](https://sass-lang.com)
+* [Styled Component](https://styled-components.com)
 * [Webpack](https://webpack.js.org)
 * [Jest](https://jestjs.io)
 * [@testing-library](https://testing-library.com)
