@@ -10,10 +10,10 @@
 
 ##### Public Packages
 * [React](https://github.com/facebook/react)
-* [I18next](https://www.i18next.com)
-* [Redux](https://redux.js.org)
+* [I18next](https://react.i18next.com)
+* [Recoil](https://recoiljs.org)
 * [TypeScript](https://github.com/microsoft/TypeScript)
-* [Sass](https://sass-lang.com)
+* [Styled Component](https://styled-components.com)
 * [Webpack](https://webpack.js.org)
 * [Jest](https://jestjs.io)
 * [@testing-library](https://testing-library.com)
@@ -43,8 +43,7 @@ AUTH_CLIENT_ID=?
 
 Ex.:
 ```
-APP_PORT=8080
-APP_HOST=local.databox.buildstaging.com
+APP_HOST=local.databox.buildstaging.com:8080
 AUTH_CLIENT_ID=5a77109e-d66d-487f-c0b6-22fc8049a1c1
 ```
 
@@ -60,7 +59,7 @@ npm install
 Starting on development mode:
 
 ```sh
-npm start
+npm run start
 ```
 
 * Open http://local.YOUR_APP_NAME.buildstaging.com:8080

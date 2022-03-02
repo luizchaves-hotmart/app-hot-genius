@@ -2,5 +2,4 @@
 AUTH_CLIENT_ID=?
 
 # APP
-APP_HOST=local.YOUR_APP.buildstaging.com
-APP_PORT=8081
+APP_HOST=local.YOUR_APP.buildstaging.com:8081

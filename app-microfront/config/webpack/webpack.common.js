@@ -1,16 +1,17 @@
-const path = require('path');
-const webpack = require('webpack');
-const { ModuleFederationPlugin } = webpack.container;
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const shared = require('../../package.json').dependencies;
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path')
+const webpack = require('webpack')
+const { ModuleFederationPlugin } = webpack.container
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const shared = require('../../package.json').dependencies
 
 require('dotenv')
   .config({
     path: path.resolve(__dirname, `../../env/.${process.env.NODE_ENV}`)
-  });
+  })
 
 const common = {
-  entry: './src/index.ts',
+  entry: './src/main/app.ts',
   output: {
     path: path.resolve(__dirname, '../../dist'),
     filename: '[name].[fullhash].js',
@@ -20,6 +21,10 @@ const common = {
     symlinks: false,
     extensions: ['.js', '.ts', '.tsx', '.json'],
     alias: {
+      '@/application': path.resolve(__dirname, '../../src/application'),
+      '@/domain': path.resolve(__dirname, '../../src/domain'),
+      '@/main': path.resolve(__dirname, '../../src/main'),
+      '@/presentation': path.resolve(__dirname, '../../src/presentation'),
       '@cosmos': '@hotmart/cosmos/dist'
     },
     unsafeCache: true
@@ -52,7 +57,7 @@ const common = {
       name: 'microfront',
       filename: 'remoteEntry.js',
       exposes: {
-        './Microfront': './src/main.component.tsx'
+        './Module1': './src/main/main.tsx'
       },
       shared
     }),
@@ -64,10 +69,9 @@ const common = {
     }),
     new webpack.EnvironmentPlugin([
       'APP_HOST',
-      'APP_PORT',
       'AUTH_CLIENT_ID'
     ])
   ]
-};
+}
 
-module.exports = common;
+module.exports = common
