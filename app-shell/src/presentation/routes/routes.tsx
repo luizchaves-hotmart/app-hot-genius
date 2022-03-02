@@ -4,7 +4,7 @@ import { useSetRecoilState } from 'recoil'
 
 import { authAtom } from '@/presentation/stores'
 import { Structure } from '@/presentation/components/structure'
-import { bootstrap, AuthEvents } from '@/application/auth'
+import { bootstrap, AuthEvents } from '@/application/services/auth'
 import { PublicRoute } from './public-route'
 import { PrivateRoute } from './private-route'
 

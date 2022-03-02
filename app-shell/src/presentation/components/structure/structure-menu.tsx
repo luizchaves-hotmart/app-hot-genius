@@ -11,7 +11,7 @@ import '@cosmos/menu-item'
 import '@cosmos/tooltip'
 import '@cosmos/dropdown'
 
-import { bootstrap } from '@/application/auth'
+import { bootstrap } from '@/application/services/auth'
 import { StructureMenuItem } from './structure-menu-item'
 
 export function StructureMenu() {
