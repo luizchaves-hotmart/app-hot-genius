@@ -9,7 +9,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: devsecauth_team
+  owner: authn_squad
   system: cas
   heimdall:
     reportable: false
@@ -19,3 +19,4 @@ spec:
     squads:
     - AuthN
     impact: ''
+
