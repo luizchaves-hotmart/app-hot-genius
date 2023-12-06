@@ -1,6 +1,6 @@
 import React from 'react'
 import { faHome } from '@fortawesome/pro-regular-svg-icons/faHome'
-import { faFolder } from '@fortawesome/pro-regular-svg-icons/faFolder'
+import { faDashboard } from '@fortawesome/pro-regular-svg-icons/faDashboard'
 
 import '@cosmos/tag'
 import '@cosmos/avatar'
@@ -17,10 +17,10 @@ import { StructureMenuItem } from './structure-menu-item'
 export function StructureMenu() {
   return (
     <hot-menu slot="menu">
-      <div slot="product-name">App</div>
+      <div slot="product-name">Hotmart Genius</div>
 
       <hot-header slot="header">
-        <span slot="brand-name">Pro</span>
+        <span slot="brand-name">Genius</span>
         <hot-dropdown slot="header-actions">
           <hot-menu-item slot="button">
             <div className="hot-application-menu__icon">
@@ -29,10 +29,6 @@ export function StructureMenu() {
               </hot-avatar>
             </div>
           </hot-menu-item>
-          <hot-dropdown-menu-item slot="menu">Item 1</hot-dropdown-menu-item>
-          <hot-dropdown-menu-item slot="menu">Item 2</hot-dropdown-menu-item>
-          <hot-dropdown-menu-item slot="menu">Item 3</hot-dropdown-menu-item>
-          <hot-dropdown-menu-item slot="menu">Item 4</hot-dropdown-menu-item>
           <hot-dropdown-menu-divider slot="menu"></hot-dropdown-menu-divider>
           <hot-dropdown-menu-item slot="menu" onClick={() => bootstrap.logout()}>
             Logout
@@ -40,8 +36,8 @@ export function StructureMenu() {
         </hot-dropdown>
       </hot-header>
 
-      <StructureMenuItem link="/" icon={faHome} name="Rota pública" />
-      <StructureMenuItem link="/module" icon={faFolder} name="Rota privada" />
+      <StructureMenuItem link="/" icon={faHome} name="Starter Form" />
+      <StructureMenuItem link="/analytics" icon={faDashboard} name="Analytics" />
     </hot-menu>
   )
 }

@@ -8,8 +8,7 @@ import { bootstrap, AuthEvents } from '@/application/services/auth'
 import { PublicRoute } from './public-route'
 import { PrivateRoute } from './private-route'
 
-const HomePage = lazy(() => import('@/presentation/pages/home'))
-const ModulePage = lazy(() => import('@/presentation/pages/module'))
+const StarterPage = lazy(() => import('@/presentation/pages/module'))
 
 export function Routes() {
   const setAuth = useSetRecoilState(authAtom)
@@ -26,8 +25,7 @@ export function Routes() {
       <BrowserRouter>
         <RoutesDOM>
           <Route path="/" element={<Structure />}>
-            <Route index element={<PublicRoute element={HomePage} />} />
-            <Route path="module" element={<PrivateRoute element={ModulePage} />} />
+            <Route index element={<PrivateRoute element={StarterPage} />} />
             <Route path="*" element={<p>{"There's nothing here!"}</p>} />
           </Route>
         </RoutesDOM>

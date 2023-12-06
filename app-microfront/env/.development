@@ -1,5 +1,5 @@
 # CAS Hotmart
-AUTH_CLIENT_ID=?
+AUTH_CLIENT_ID=b432cdd3-eb60-46bd-892b-5b450a65153e
 
 # APP
-APP_HOST=local.YOUR_APP.buildstaging.com:8081
+APP_HOST=local.buildstaging.com:8081

@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from 'react'
 import '@cosmos/loading'
 
+
 import { Microfront } from '@/presentation/containers/module'
 import './i18n'
 
